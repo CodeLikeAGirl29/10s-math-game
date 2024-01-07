@@ -1,89 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 		<title>10 Sec Maths Game</title>
 		<link
 			rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-		/>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Bitter:400,700"
 		/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link href="index.css" rel="stylesheet" type="text/css" />
+
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
 		<script src="index.js"></script>
 	</head>
 	<body>
-		<nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-			<div class="container">
-				<a class="navbar-brand" href="#">Company Name</a
-				><button
-					class="navbar-toggler"
-					data-toggle="collapse"
-					data-target="#navcol-1"
-				>
-					<span class="sr-only">Toggle navigation</span
-					><span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navcol-1">
-					<ul class="nav navbar-nav">
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							<a
-								class="dropdown-toggle nav-link dropdown-toggle"
-								data-toggle="dropdown"
-								aria-expanded="false"
-								href="#"
-								>Dropdown
-							</a>
-							<div class="dropdown-menu" role="menu">
-								<a class="dropdown-item" role="presentation" href="#"
-									>First Item</a
-								><a class="dropdown-item" role="presentation" href="#"
-									>Second Item</a
-								><a class="dropdown-item" role="presentation" href="#"
-									>Third Item</a
-								>
-							</div>
-						</li>
-					</ul>
-					<form class="form-inline mr-auto" target="_self">
-						<div class="form-group">
-							<label for="search-field"><i class="fa fa-search"></i></label
-							><input
-								class="form-control search-field"
-								type="search"
-								name="search"
-								id="search-field"
-							/>
+		<div class="main-page-wrapper">
+			<!-- /.theme-main-header -->
+			<div class="container mx-auto">
+				<div class="row">
+					<div class="theme-title text-center col-xs-12">
+						<h2>LET&apos;S PLAY!</h2>
+						<div class="countdown-wrapper">
+							<h3 id="time-left" class="p-4 time text-center">10</h3>
+							<p>seconds left</p>
 						</div>
-					</form>
-				</div>
-			</div>
-		</nav>
-		<div class="container hero">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2>10 Sec Maths Game</h2>
-					<h3 id="time-left">10</h3>
-					<p>second left</p>
-					<h1 id="equation"></h1>
-					<input id="user-input" type="number" />
-					<h4>Score: <span id="score"></span></h4>
+						<h1 id="equation"></h1>
+						<input id="user-input" type="number" />
+						<h4 class="score">Score: <span id="score"></span></h4>
+					</div>
 				</div>
 			</div>
 		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+		<!-- =============================================
+				Loading Transition
+			============================================== -->
+		<!-- <div id="loader-wrapper">
+			<div id="preloader_1">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
