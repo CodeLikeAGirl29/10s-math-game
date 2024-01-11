@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	var timeLeft = 10;
 	var score = 0;
 	var storedHighScore = localStorage.getItem("highScore") || 0;
+	var numberChosen = 10;
+
+	var selected;
+	var selectType = function () {
+		selected = _.sample(types).toString();
+		return selected;
+	};
 
 	var updateTimeLeft = function (amount) {
 		timeLeft += amount;
@@ -76,6 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Initialize high score on page load
 	highScoreElement.textContent = storedHighScore;
+
+	$("#numberLimit").on("submit", function (e) {
+		e.preventDefault();
+		$("#currentLimit").html($("#numberInput").val());
+		numberChosen = $("#numberInput").val();
+		$("#numberInput").val("");
+	});
 
 	renderNewQuestion();
 });
