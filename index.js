@@ -1,8 +1,11 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
+	// global elements
+	var highScoreElement = document.querySelector("#highScore");
 	var currentQuestion;
 	var interval;
 	var timeLeft = 10;
 	var score = 0;
+	var storedHighScore = localStorage.getItem("highScore") || 0;
 
 	var updateTimeLeft = function (amount) {
 		timeLeft += amount;
@@ -12,6 +15,12 @@ $(document).ready(function () {
 	var updateScore = function (amount) {
 		score += amount;
 		$("#score").text(score);
+
+		if (score > storedHighScore) {
+			storedHighScore = score;
+			localStorage.setItem("highScore", storedHighScore);
+			highScoreElement.textContent = storedHighScore;
+		}
 	};
 
 	var startGame = function () {
@@ -21,6 +30,7 @@ $(document).ready(function () {
 				updateScore(-score);
 			}
 			interval = setInterval(function () {
+				updateScore(0); // call updateScore with 0 to check for high score update
 				updateTimeLeft(-1);
 				if (timeLeft === 0) {
 					clearInterval(interval);
@@ -40,7 +50,7 @@ $(document).ready(function () {
 		var num2 = randomNumberGenerator(10);
 
 		question.answer = num1 + num2;
-		question.equation = String(num1) + " + " + String(num2);
+		question.equation = `${num1} + ${num2}`;
 
 		return question;
 	};
@@ -63,6 +73,9 @@ $(document).ready(function () {
 		startGame();
 		checkAnswer(Number($(this).val()), currentQuestion.answer);
 	});
+
+	// Initialize high score on page load
+	highScoreElement.textContent = storedHighScore;
 
 	renderNewQuestion();
 });
